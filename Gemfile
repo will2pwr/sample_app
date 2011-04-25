@@ -24,11 +24,12 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
 gem 'gravatar_image_tag'
-
+gem 'will_paginate', '3.0.pre2'
 
 group :development do
   gem 'rspec-rails'
   gem 'annotate-models'
+	gem 'faker'
 end
 
 group :test do
