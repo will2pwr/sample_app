@@ -24,7 +24,7 @@ describe UsersController do
     
     it "should be successful" do
       get :show, :id => @user
-      response.should be_successful
+      response.should be_success
     end
     
     it "should find the right user" do
