@@ -26,7 +26,7 @@ describe "LayoutLinks" do
     get '/signup'
     response.should have_selector("title", :content => "Sign up")
   end
-  
+
   describe "when not signed in" do
     
     it "should have a signin link" do
@@ -54,6 +54,11 @@ describe "LayoutLinks" do
     it "should have a profile link" do
       visit root_path
       response.should have_selector("a", :href => user_path(@user), :content => "Profile")
+    end
+    
+    it "normal user should not see delete links for User index page" do
+      visit users_path
+      response.should_not have_selector("a", :content => "delete")
     end
   end
 end
