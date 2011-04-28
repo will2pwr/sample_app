@@ -11,7 +11,7 @@ describe Micropost do
     @user.microposts.create!(@attr)
   end
   
-  describe "user associates" do
+  describe "user assoications" do
     
     before(:each) do
       @micropost = @user.microposts.create(@attr)
