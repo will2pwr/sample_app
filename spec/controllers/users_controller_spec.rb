@@ -110,6 +110,16 @@ describe UsersController do
       response.should have_selector("span.content", :content => mp1.content)
       response.should have_selector("span.content", :content => mp2.content)
     end
+    
+    it "should have the corrent microposts count and pluralization" do
+      mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
+      mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")
+      mp3 = Factory(:micropost, :user => @user, :content => "law quux")
+      mp = [mp1,mp2,mp3]
+      get :show, :id => @user
+      response.should have_selector("td.sidebar", :content => mp.length.to_s)
+      response.should have_selector("td.sidebar>strong", :content => "Microposts")
+    end
   end
 
   describe "POST 'create'" do

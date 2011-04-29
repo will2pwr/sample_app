@@ -37,5 +37,5 @@ describe "Microposts" do
         end.should change(Micropost, :count).by(1)
       end
     end
-  end
+  end      
 end
