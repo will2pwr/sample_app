@@ -36,7 +36,7 @@ describe MicropostsController do
 
       it "should render the home page" do
         post :create, :micropost => @attr
-        response.should render_template('page/home')
+        response.should render_template('pages/home')
       end
     end
 
@@ -89,10 +89,10 @@ describe MicropostsController do
       end
 
       it "should destroy the micropost" do
-        lambda do
+        lambda do 
           delete :destroy, :id => @micropost
         end.should change(Micropost, :count).by(-1)
       end
-    end
+    end    
   end
 end
